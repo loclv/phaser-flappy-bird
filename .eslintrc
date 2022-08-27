@@ -1,0 +1,65 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "prettier"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@shopify/esnext",
+    "plugin:@shopify/typescript",
+    "plugin:@shopify/typescript-type-checking",
+    "plugin:@shopify/node",
+    "prettier"
+  ],
+  "parserOptions": {
+    "project": "tsconfig.json",
+    "createDefaultProgram": true,
+    "warnOnUnsupportedTypeScriptVersion": false
+  },
+  "rules": {
+    "prettier/prettier": 2,
+    "no-console": 1,
+    "no-unused-vars": 0,
+    "import/no-anonymous-default-export": [0],
+    "no-new": 0,
+    "no-warning-comments": 0,
+    "default-case": 2,
+    "max-lines": [2, 400],
+    "max-len": [
+      2,
+      {
+        "code": 120
+      }
+    ],
+    "no-else-return": 2,
+    "max-lines-per-function": [2, 255],
+    "@typescript-eslint/no-unused-vars": 2,
+    "@typescript-eslint/no-empty-interface": 2,
+    "@typescript-eslint/naming-convention": [
+      2,
+      {
+        "selector": "interface",
+        "format": ["StrictPascalCase"],
+        "prefix": ["I"]
+      },
+      {
+        "selector": "variable",
+        "format": ["strictCamelCase", "UPPER_CASE", "snake_case"]
+      },
+      {
+        "selector": "typeParameter",
+        "format": ["PascalCase"],
+        "prefix": ["T"]
+      },
+      {
+        "selector": "variable",
+        "types": ["boolean"],
+        "format": ["PascalCase"],
+        "prefix": ["is", "should", "has", "can", "did", "will", "was"]
+      }
+    ],
+    "no-shadow": 0,
+    "@typescript-eslint/no-shadow": 2
+  }
+}
