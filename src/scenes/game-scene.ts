@@ -1,4 +1,4 @@
-import { ScreenName } from '@model';
+import { ScreenName, Texture } from '@model';
 import { Bird, Pipe } from '@objects';
 
 export class GameScene extends Phaser.Scene {
@@ -31,7 +31,7 @@ export class GameScene extends Phaser.Scene {
       scene: this,
       x: 50,
       y: 100,
-      texture: 'bird',
+      texture: Texture.Bird,
     });
 
     this.addNewRowOfPipes();
@@ -103,7 +103,7 @@ export class GameScene extends Phaser.Scene {
         x,
         y,
         frame,
-        texture: 'pipe',
+        texture: Texture.Pipe,
       })
     );
   }
