@@ -1,10 +1,12 @@
+import { ScreenName } from '@model';
+
 export class BootScene extends Phaser.Scene {
   private loadingBar!: Phaser.GameObjects.Graphics;
   private declare progressBar: Phaser.GameObjects.Graphics;
 
   constructor() {
     super({
-      key: 'BootScene',
+      key: ScreenName.BootScene,
     });
   }
 
@@ -44,7 +46,7 @@ export class BootScene extends Phaser.Scene {
   }
 
   update(): void {
-    this.scene.start('MainMenuScene');
+    this.scene.start(ScreenName.MainMenuScene);
   }
 
   private createLoadingbar(): void {

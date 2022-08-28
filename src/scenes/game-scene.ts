@@ -1,4 +1,5 @@
-import { Bird, Pipe } from '../objects';
+import { ScreenName } from '@model';
+import { Bird, Pipe } from '@objects';
 
 export class GameScene extends Phaser.Scene {
   private bird!: Bird;
@@ -9,7 +10,7 @@ export class GameScene extends Phaser.Scene {
 
   constructor() {
     super({
-      key: 'GameScene',
+      key: ScreenName.GameScene,
     });
   }
 
@@ -45,8 +46,19 @@ export class GameScene extends Phaser.Scene {
   }
 
   update(): void {
-    // eslint-disable-next-line no-negated-condition
-    if (!this.bird.getDead()) {
+    if (this.bird.getDead()) {
+      Phaser.Actions.Call(
+        this.pipes.getChildren(),
+        ((pipe: Pipe) => {
+          pipe.body.setVelocityX(0);
+        }) as Phaser.Types.Actions.CallCallback,
+        this
+      );
+
+      if (this.bird.y > this.sys.canvas.height) {
+        this.scene.start(ScreenName.MainMenuScene);
+      }
+    } else {
       this.background.tilePositionX += 4;
       this.bird.update();
       this.physics.overlap(
@@ -58,18 +70,6 @@ export class GameScene extends Phaser.Scene {
         undefined,
         this
       );
-    } else {
-      Phaser.Actions.Call(
-        this.pipes.getChildren(),
-        ((pipe: Pipe) => {
-          pipe.body.setVelocityX(0);
-        }) as Phaser.Types.Actions.CallCallback,
-        this
-      );
-
-      if (this.bird.y > this.sys.canvas.height) {
-        this.scene.start('MainMenuScene');
-      }
     }
   }
 

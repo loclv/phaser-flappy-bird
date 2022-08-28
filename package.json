@@ -36,7 +36,8 @@
     "phaser": "^3.55.2",
     "prettier": "^2.7.1",
     "typescript": "^4.8.2",
-    "vite": "^2.9.15"
+    "vite": "^2.9.15",
+    "vite-tsconfig-paths": "^3.5.0"
   },
   "lint-staged": {
     "*.ts": [

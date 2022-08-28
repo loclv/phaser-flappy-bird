@@ -1,7 +1,9 @@
 import { defineConfig } from 'vite';
 import replace from '@rollup/plugin-replace';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
+  plugins: [tsconfigPaths({ extensions: ['.ts'] })],
   build: {
     rollupOptions: {
       plugins: [

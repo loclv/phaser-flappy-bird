@@ -1,3 +1,5 @@
+import { ScreenName } from '@model';
+
 export class MainMenuScene extends Phaser.Scene {
   private startKey!: Phaser.Input.Keyboard.Key;
   private titleBitmapText!: Phaser.GameObjects.BitmapText;
@@ -5,7 +7,7 @@ export class MainMenuScene extends Phaser.Scene {
 
   constructor() {
     super({
-      key: 'MainMenuScene',
+      key: ScreenName.MainMenuScene,
     });
   }
 
@@ -26,7 +28,7 @@ export class MainMenuScene extends Phaser.Scene {
 
   update(): void {
     if (this.startKey.isDown) {
-      this.scene.start('GameScene');
+      this.scene.start(ScreenName.GameScene);
     }
   }
 
