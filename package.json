@@ -17,7 +17,7 @@
   "repository": {
     "type": "git"
   },
-  "author": "Aivan Monceller, digitsensitive, Luu Vinh Loc",
+  "author": "Aivan Monceller, digitsensitive, dotGEARS, Luu Vinh Loc",
   "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-alias": "^3.1.9",
