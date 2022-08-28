@@ -1,4 +1,4 @@
-import { IImageConstructor } from '../model/image';
+import { IImageConstructor } from '@model';
 
 export class Pipe extends Phaser.GameObjects.Image {
   declare body: Phaser.Physics.Arcade.Body;
